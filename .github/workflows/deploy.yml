@@ -17,5 +17,5 @@ jobs:
       - name: Simulate Deploy
         run: sleep 10 && echo "Deploying..."
 
-      - name: FORCE FAIL
-        run: exit 1
+      - name: Simulate Deploy
+        run: sleep 15 && echo "Deploy SUCCESS!"
