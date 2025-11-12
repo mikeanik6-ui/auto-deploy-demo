@@ -5,27 +5,17 @@ on:
     branches: [ main ]
 
 jobs:
-  test-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
-    
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-    
-    - name: Run Tests (Always Pass)
-      run: |
-        echo "Running tests..."
-        sleep 10  # Simulate work
-    
-    - name: Deploy to Vercel (Simulate)
-      run: |
-        echo "Deploying..."
-        sleep 20  # Wait like real deploy
-    
-    - name: Random Fail Test (For Demo)
-      run: |
-        if [ $((RANDOM % 2)) -eq 0 ]; then
-          echo "✅ Deploy SUCCESS!"
-        else
-          echo "❌ Deploy FAILED!" && exit 1  # Fail 50% time
-        fi
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Say Hello
+        run: echo "Hello from GitHub Actions!"
+
+      - name: Simulate Deploy
+        run: sleep 10 && echo "Deploying..."
+
+      - name: FORCE FAIL
+        run: exit 1
