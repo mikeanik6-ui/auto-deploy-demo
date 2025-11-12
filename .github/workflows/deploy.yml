@@ -19,3 +19,4 @@ jobs:
 
       - name: Simulate Deploy
         run: sleep 15 && echo "Deploy SUCCESS!"
+        exit 1 → forces error
